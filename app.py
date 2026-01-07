@@ -38,7 +38,8 @@ def preprocess_data(df):
     ]
     
     X = df[features].copy()
-    scaler = StandardScaler()
+    # 이렇게 가져온 도구 이름(MinMaxScaler)과 똑같이 맞춰줘야 합니다.
+    scaler = MinMaxScaler()
     X_scaled = scaler.fit_transform(X)
     
     # --- PCA 적용 (Orange의 로직) ---
